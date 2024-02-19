@@ -11,7 +11,7 @@ public class OverOneHundredDollarsRuleProvider implements RewardRuleProvider {
     @Override
     public BigDecimal calculatePoints(BigDecimal amount) {
         if (isAmountGreaterThan100(amount)) {
-            return amount.subtract(ONE_HUNDRED).multiply(ONE_DOLLAR_POINT_VALUE).setScale(SCALE, ROUNDING_MODE);
+            return amount.subtract(ONE_HUNDRED).setScale(SCALE, ROUNDING_MODE).multiply(ONE_DOLLAR_POINT_VALUE);
         }
         return BigDecimal.ZERO;
     }

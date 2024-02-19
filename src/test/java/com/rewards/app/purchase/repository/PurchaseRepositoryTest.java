@@ -52,7 +52,7 @@ class PurchaseRepositoryTest extends BaseIT {
         // then
         assertThat(results).hasSize(1);
         assertThat(results.get(0).amount()).isEqualTo(purchase1.getAmount());
-        assertThat(results.get(0).date()).isEqualTo(purchase1.getCreatedAt());
+        assertThat(results.get(0).date().withNano(0)).isEqualTo(purchase1.getCreatedAt().withNano(0));
     }
 
 }

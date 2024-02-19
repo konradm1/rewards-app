@@ -1,4 +1,9 @@
 # rewards-app
+requirements to run application/tests;
+- installed docker,
+- installed docker compose
+- java 17
+
 steps to run application:
 - open terminal/console
 - go to main project folder

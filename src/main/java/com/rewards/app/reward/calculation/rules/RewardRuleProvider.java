@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public interface RewardRuleProvider {
-    int SCALE = 2;
-    RoundingMode ROUNDING_MODE = RoundingMode.HALF_DOWN;
+    int SCALE = 0;
+    RoundingMode ROUNDING_MODE = RoundingMode.DOWN;
     BigDecimal calculatePoints(BigDecimal amount);
 }

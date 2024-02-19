@@ -21,7 +21,7 @@ class OneHundredDollarsRuleProviderTest {
             "75, 25",
             "150, 50",
             "100, 50",
-            "75.5, 25.5"
+            "75.5, 25"
     })
     void testCalculationPointsWhenPointsCollected(BigDecimal amountParam, BigDecimal expectedPointsParam) {
         BigDecimal expectedPoints = expectedPointsParam.setScale(OneHundredDollarsRuleProvider.SCALE, OneHundredDollarsRuleProvider.ROUNDING_MODE);
@@ -31,7 +31,8 @@ class OneHundredDollarsRuleProviderTest {
     @ParameterizedTest
     @CsvSource({
             "50, 0",
-            "48, 0"
+            "48, 0",
+            "50.9,0"
     })
     void testCalculationPointsWhenPointsNotCollected(BigDecimal amount, BigDecimal expectedPoints) {
         assertEquals(expectedPoints, ruleProvider.calculatePoints(amount));

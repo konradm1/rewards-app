@@ -14,9 +14,9 @@ public class OneHundredDollarsRuleProvider implements RewardRuleProvider {
     public BigDecimal calculatePoints(BigDecimal amount) {
 
         if (isAmountLowerThan100(amount)) {
-            return isAmountGreaterThan50(amount) ? amount.subtract(FIFTY).multiply(ONE_DOLLAR_POINT_VALUE).setScale(SCALE, ROUNDING_MODE) : BigDecimal.ZERO;
+            return isAmountGreaterThan50(amount) ? amount.subtract(FIFTY).setScale(SCALE, ROUNDING_MODE).multiply(ONE_DOLLAR_POINT_VALUE) : BigDecimal.ZERO;
         }
-        return FIFTY.multiply(ONE_DOLLAR_POINT_VALUE).setScale(SCALE, ROUNDING_MODE);
+        return FIFTY.multiply(ONE_DOLLAR_POINT_VALUE);
     }
 
     private boolean isAmountLowerThan100(BigDecimal amount) {
